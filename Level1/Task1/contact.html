@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<html >
+
+    <head  class="heading">
+        <link rel="stylesheet" href="style.css">
+        <img src="./images/gpkcsqk9.png" class="icon"/>    <div class="title"><h1>Simple Website in HTML and CSS (Level1 Task1)</h1></div>
+    </head>
+     
+<div class="topnav">
+  <a  href="./index.html">Home</a>
+  <a href="./news.html">News</a>
+  <a class="active" href="./contact.html">Contact</a>
+  <a href="./about.html">About</a>
+</div> 
+<body>
+    <p>Hello this a contact section with some contac details for you to see.</p>
+
+        <p class="main-form">
+        <label class="name">Enter Your Name</label><br>
+        <input id="user_name" placeholder="Ex:Amelia Watson"><br>
+        <label>Enter Your Email Id</label><br>
+        <input id="user_email" placeholder="Ex:companyabc@mail.com"><br>
+        <label>Subject</label><br>
+        <textarea id="user_content" placeholder="Write Something" > </textarea><br>
+
+        <button onclick="form_submitted()">Submit</button>
+
+        </p>
+ 
+
+</body>
+
+
+ </html>
+
+
+ <script>
+function valid(email) {
+    const pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return pattern.test(email);
+}
+     function form_submitted(){
+         var name= document.getElementById("user_name").value;
+         var email = document.getElementById("user_email").value;
+
+         var content = document.getElementById("user_content").value;
+         if (!valid(email)){
+            alert("Please Enter Valid Mail") 
+         } else{
+
+         console.log(name , email , content)
+         } 
+     }
+ </script>

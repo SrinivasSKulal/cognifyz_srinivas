@@ -1,0 +1,171 @@
+/* --- Basic Reset & Body Styles --- */
+* {
+    box-sizing: border-box; /* Makes padding/border included in width/height */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    padding: 10px; /* Add some padding around the content on small screens */
+}
+
+/* --- Mobile First Styles (Default) --- */
+
+.site-header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.main-nav ul {
+    list-style: none;
+    background-color: #444;
+    margin-bottom: 10px;
+    padding: 0.5rem 0; /* Add some vertical padding */
+}
+
+.main-nav li {
+    text-align: center;
+    border-bottom: 1px solid #555; /* Separator for stacked links */
+}
+.main-nav li:last-child {
+    border-bottom: none; /* Remove border from last item */
+}
+
+.main-nav a {
+    display: block; /* Make link take full width for easy tapping */
+    padding: 0.75rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-nav a:hover {
+    background-color: #555;
+}
+
+.content-wrapper {
+    /* No specific layout needed here for mobile, children stack naturally */
+}
+
+.main-content {
+    background-color: #fff;
+    padding: 1rem;
+    margin-bottom: 10px; /* Space between main and sidebar when stacked */
+}
+
+.content-image {
+    max-width: 100%; /* Make image responsive - scale down if needed */
+    height: auto;    /* Maintain aspect ratio */
+    display: block;  /* Remove extra space below image */
+    margin: 1rem 0;  /* Add some vertical spacing */
+}
+
+
+.sidebar {
+    background-color: #ddd;
+    padding: 1rem;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-top: 0.5rem;
+}
+
+.sidebar li {
+    margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+    color: #333;
+    text-decoration: none;
+}
+.sidebar a:hover {
+    text-decoration: underline;
+}
+
+.site-footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 10px;
+}
+
+
+/* --- Media Queries for Responsiveness --- */
+
+/* == Medium Screens (Tablets - e.g., 768px and wider) == */
+@media (min-width: 768px) {
+    body {
+        padding: 20px; /* Increase body padding */
+    }
+
+    /* Arrange Nav horizontally */
+    .main-nav ul {
+        display: flex; /* Use flexbox for horizontal layout */
+        justify-content: center; /* Center the nav items */
+        padding: 0; /* Remove vertical padding needed for stacking */
+    }
+
+    .main-nav li {
+        border-bottom: none; /* Remove bottom border */
+        border-right: 1px solid #555; /* Add vertical separator */
+    }
+    .main-nav li:last-child {
+        border-right: none; /* Remove border from last item */
+    }
+    .main-nav a {
+         padding: 1rem; /* Adjust padding for horizontal layout */
+    }
+
+
+    /* Arrange Main Content and Sidebar side-by-side */
+    .content-wrapper {
+        display: flex; /* Use Flexbox for the layout */
+        gap: 20px;     /* Add space between main content and sidebar */
+    }
+
+    .main-content {
+        flex: 3; /* Main content takes up 3 parts of the available space */
+        margin-bottom: 0; /* Remove bottom margin, no longer needed */
+    }
+
+    .sidebar {
+        flex: 1; /* Sidebar takes up 1 part of the available space */
+    }
+}
+
+
+/* == Large Screens (Desktops - e.g., 1024px and wider) == */
+@media (min-width: 1024px) {
+    /* Optional: Constrain overall width and center for very large screens */
+    body {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 30px;
+    }
+
+    /* Optional: Slightly adjust flex ratio if desired */
+    /*
+    .main-content {
+        flex: 4;
+    }
+    .sidebar {
+        flex: 1;
+    }
+    */
+
+    /* Optional: Increase base font size */
+    /*
+    body {
+        font-size: 18px;
+    }
+    */
+}

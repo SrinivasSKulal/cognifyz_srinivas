@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CSS Image Gallery</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery a img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery a:hover img {
+      transform: scale(1.05);
+    }
+
+    /* Lightbox Overlay */
+    .lightbox {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 10;
+    }
+
+    .lightbox:target {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 90%;
+      max-height: 80%;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #fff;
+    }
+
+    .close {
+      position: absolute;
+      top: 30px;
+      right: 40px;
+      font-size: 30px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .gallery img{
+        height : 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Simple CSS Image Gallery</h2>
+  <div class="gallery">
+    <a href="#img1"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Liliumbulbiferumflowertop.jpg/500px-Liliumbulbiferumflowertop.jpg" alt="Thumbnail 1"></a>
+    <a href="#img2"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/White_and_yellow_flower.JPG/500px-White_and_yellow_flower.JPG" alt="Thumbnail 2"></a>
+    <a href="#img3"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Ambrosius_Bosschaert_the_Elder_%28Dutch_-_Flower_Still_Life_-_Google_Art_Project.jpg/500px-Ambrosius_Bosschaert_the_Elder_%28Dutch_-_Flower_Still_Life_-_Google_Art_Project.jpg" alt="Thumbnail 3"></a>
+  </div>
+
+  <!-- Lightbox 1 -->
+  <div class="lightbox" id="img1">
+    <a href="#" class="close">&times;</a>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Liliumbulbiferumflowertop.jpg/500px-Liliumbulbiferumflowertop.jpg" alt="Full Image 1">
+  </div>
+
+  <!-- Lightbox 2 -->
+  <div class="lightbox" id="img2">
+    <a href="#" class="close">&times;</a>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/White_and_yellow_flower.JPG/500px-White_and_yellow_flower.JPG" alt="Full Image 2">
+  </div>
+
+  <!-- Lightbox 3 -->
+  <div class="lightbox" id="img3">
+    <a href="#" class="close">&times;</a>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Ambrosius_Bosschaert_the_Elder_%28Dutch_-_Flower_Still_Life_-_Google_Art_Project.jpg/500px-Ambrosius_Bosschaert_the_Elder_%28Dutch_-_Flower_Still_Life_-_Google_Art_Project.jpg" alt="Full Image 3">
+  </div>
+
+</body>
+</html>
+

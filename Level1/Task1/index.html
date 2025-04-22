@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<DOCTYPE html>
 <html lang="en">
 <html >
 
@@ -9,12 +9,16 @@
      
 <div class="topnav">
   <a class="active" href="#home">Home</a>
-  <a href="./">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
+  <a href="./news.html">News</a>
+  <a href="./contact.html">Contact</a>
+  <a href="./about.html">About</a>
 </div> 
     <body>
         <p  class="main-para">
+        <h4> Hello This a Welcome page for the Project Level 1 Task 1 assigned to Srinivas S Kulal From Manipal Institue of Technology by Cognifyz. </h4>
+           
+            <br>
+            This is placeholder Text. <br>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc scelerisque lacus sit amet lectus 
             ultrices fermentum. In id magna neque. In sed eleifend sapien. In sit amet suscipit eros, ut dictum
             quam. Etiam pretium lorem eget efficitur ornare. Nam suscipit, mauris sit amet porttitor mattis, erat
@@ -24,11 +28,11 @@
             curae; Vivamus imperdiet arcu lectus. Pellentesque placerat ultricies augue, laoreet pretium velit
             gravida et. Phasellus tempus convallis rhoncus. Suspendisse luctus tempor ex, quis ullamcorper ex
             rutrum eu. Ut convallis ullamcorper nulla sit amet pulvinar. 
-        </p>
+ </p>
         <p class="main-form">
         <label class="name">Enter Your Name</label><br>
-        <input placeholder="Ex:Shiori Novella ">
-        <button>Submit</button>
+        <input id="user_input" placeholder="Ex:Amelia Watson">
+        <button onclick="form_submitted()">Submit</button>
 
         </p>
     </body>
@@ -36,3 +40,11 @@
 
     </footer>
 </html>
+
+<script>
+    function form_submitted(){
+        var user_input = document.getElementById("user_input").value;
+        console.log(user_input)
+        alert("Form submitted");
+    }
+</script>

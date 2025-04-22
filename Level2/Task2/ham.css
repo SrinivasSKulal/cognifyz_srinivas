@@ -1,0 +1,95 @@
+/* --- Basic Setup --- */
+body { margin: 0; font-family: sans-serif; }
+.site-header { background-color: #333; color: white; padding: 0.5rem 1rem; display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.5rem; font-weight: bold; }
+
+/* --- Mobile Styles (Default) --- */
+.main-nav { position: relative; }
+
+.nav-toggle-button {
+    /* Hamburger Button Styling */
+    display: block; /* Show on mobile */
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    order: 1; /* Ensures it appears after links in flex if needed, but usually position absolute */
+}
+
+.nav-toggle-button .hamburger-line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    /* Hide menu */
+    display: none; /* Simple hide/show */
+    /* OR use transform for animation:
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s;
+    */
+
+    /* Positioning for dropdown */
+    background-color: #444;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 150px;
+    z-index: 10;
+}
+
+/* --- Active State (Toggled by JS) --- */
+.nav-links.is-active {
+    display: block; /* Show the menu */
+     /* OR use transform for animation:
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+    */
+}
+
+.nav-links li { text-align: center; }
+.nav-links a { display: block; padding: 0.8rem 1rem; color: white; text-decoration: none; border-bottom: 1px solid #555; }
+.nav-links li:last-child a { border-bottom: none; }
+.nav-links a:hover { background-color: #555; }
+
+
+/* Optional: Animate hamburger icon to 'X' when button is active (add .is-active class via JS too) */
+.nav-toggle-button.is-active .hamburger-line:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.nav-toggle-button.is-active .hamburger-line:nth-child(2) { opacity: 0; }
+.nav-toggle-button.is-active .hamburger-line:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+
+/* --- Desktop Styles (Using Media Query) --- */
+@media (min-width: 768px) {
+    .nav-toggle-button {
+        display: none; /* Hide button */
+    }
+
+    .nav-links {
+        /* Reset mobile styles */
+        display: flex !important; /* Use !important to override JS inline style if using display none/block */
+        /* If using transforms for animation, reset them here:
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+        */
+        position: static;
+        background-color: transparent;
+        width: auto;
+    }
+
+    .nav-links li { margin-left: 1rem; }
+    .nav-links a { padding: 0.5rem 0; border-bottom: none; }
+    .nav-links a:hover { background-color: transparent; color: #ccc; }
+}
