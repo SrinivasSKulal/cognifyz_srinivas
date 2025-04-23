@@ -5,12 +5,12 @@ Your internship task requires you to complete any two levels out of the three pr
 - [x] **Task 2 (JavaScript)**: Implement a button that changes color on click, an alert box that displays a greeting based on time, and a simple calculator.
 
 ### **Level 2 (Intermediate)**
-- [x]**Task 1 (Front-end Frameworks)**: Use a framework like Bootstrap, Bulma, or UIKit to create a responsive card component and a grid layout.
-- [x]**Task 2 (Responsive Design)**: Convert a webpage into a responsive design using CSS media queries and implement a mobile-friendly navigation menu.
+- [x] **Task 1 (Front-end Frameworks)**: Use a framework like Bootstrap, Bulma, or UIKit to create a responsive card component and a grid layout.
+- [x] **Task 2 (Responsive Design)**: Convert a webpage into a responsive design using CSS media queries and implement a mobile-friendly navigation menu.
 
 ### **Level 3 (Advanced)**
-- [x]**Task 1 (Image Manipulation)**: Create an image gallery with thumbnails that enlarge on click and a simple image slideshow.
-- [x]**Task 2 (Landing Page)**: Design a web developer internship landing page with key elements such as a CTA button, highlights, and contact info.
+- [x] **Task 1 (Image Manipulation)**: Create an image gallery with thumbnails that enlarge on click and a simple image slideshow.
+- [x] **Task 2 (Landing Page)**: Design a web developer internship landing page with key elements such as a CTA button, highlights, and contact info.
 
 ### **Submission Requirements**
 - Choose **any two** levels (Level 1, Level 2, or Level 3).
